@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import {Text, StatusBar} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+import DataForm from '../modules/DataForm';
+
 const screen = createBottomTabNavigator();
 
-const hello = () => {
-  return <Text>Hello</Text>;
-};
 const world = () => {
   return (
     <>
@@ -30,7 +29,7 @@ export default class Main extends Component {
           }}>
           <screen.Screen
             name="Upload data"
-            component={hello}
+            component={DataForm}
             options={{headerShown: false}}
           />
           <screen.Screen name="Check results" component={world} />
