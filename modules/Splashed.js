@@ -2,6 +2,17 @@ import React, {Component} from 'react';
 import {Image, StyleSheet, Text, View, StatusBar} from 'react-native';
 
 export default class Splash extends Component {
+  state = {change: false};
+
+  componentDidMount = () => {
+    setTimeout(() => {
+      this.setState({change: true});
+    }, 5000);
+  };
+  componentDidUpdate() {
+    if (this.state.change) this.props.navigation.goBack();
+  }
+
   render() {
     return (
       <View style={styles.container}>

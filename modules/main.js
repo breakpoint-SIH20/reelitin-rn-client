@@ -1,42 +1,34 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, StatusBar} from 'react-native';
+import {Text} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const screen = createBottomTabNavigator();
+
+const hello = () => {
+  return <Text>Hello</Text>;
+};
+const world = () => {
+  return <Text>World</Text>;
+};
 
 export default class Main extends Component {
+  componentDidMount = () => {
+    this.props.navigation.push('SplashScreen');
+  };
   render() {
     return (
-      <View style={styles.container}>
-        <StatusBar barStyle="light-content" backgroundColor="#4F6D7A" />
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <screen.Navigator
+        screenOptions={{
+          gestureEnabled: true,
+          cardOverlayEnabled: true,
+        }}>
+        <screen.Screen
+          name="Upload data"
+          component={hello}
+          options={{headerShown: false}}
+        />
+        <screen.Screen name="Check results" component={world} />
+      </screen.Navigator>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#4F6D7A',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-    color: '#F5FCFF',
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#F5FCFF',
-    marginBottom: 5,
-  },
-});
