@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from '@react-navigation/stack';
 
 import Splash from './Splashed';
 import Main from './main';
@@ -25,10 +28,14 @@ export default class App extends Component {
       <NavigationContainer>
         <screen.Navigator
           screenOptions={{
-            gestureEnabled: true,
-            cardOverlayEnabled: true,
+            cardStyleInterpolator:
+              CardStyleInterpolators.forScaleFromCenterAndroid,
           }}>
-          <screen.Screen name="MainNavigator" component={Main} />
+          <screen.Screen
+            name="MainNavigator"
+            component={Main}
+            options={{headerShown: false}}
+          />
           <screen.Screen
             name="SplashScreen"
             component={Splash}
