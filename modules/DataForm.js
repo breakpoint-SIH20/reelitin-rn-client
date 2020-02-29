@@ -13,7 +13,6 @@ const DataForm = () => {
       <InputLabel label={'Age'} />
       <InputLabel label={'Weight'} />
       <InputLabel label={'Comments'} />
-      <InputLabel label={'Width'} />
     </View>
   );
 };
