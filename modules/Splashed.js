@@ -7,7 +7,7 @@ export default class Splash extends Component {
   componentDidMount = () => {
     setTimeout(() => {
       this.setState({change: true});
-    }, 5000);
+    }, 2000);
   };
   componentDidUpdate() {
     if (this.state.change) this.props.navigation.goBack();
@@ -16,7 +16,7 @@ export default class Splash extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
+        <StatusBar barStyle="dark-content" backgroundColor="#ffffffff" />
         <Image
           source={require('../assets/images/medicine.png')}
           style={styles.image}
