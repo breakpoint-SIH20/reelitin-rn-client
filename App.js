@@ -5,21 +5,9 @@ import {
   CardStyleInterpolators,
 } from '@react-navigation/stack';
 
-import Splash from './Splashed';
-import Main from './main';
-
-// const stackNavigator = createStackNavigator(
-//   {
-//     SplashScreen: {screen: Splash},
-//     MainNavigator: {screen: Main},
-//   },
-//   {
-//     headerMode: 'screen',
-//     navigationOptions: {
-//       header: {visible: false},
-//     },
-//   },
-// );
+import Splash from './modules/Splash Screen/Splashed';
+import Login from './modules/Login/Login';
+import User from './modules/User/User';
 
 const screen = createStackNavigator();
 export default class App extends Component {
@@ -33,12 +21,17 @@ export default class App extends Component {
           }}>
           <screen.Screen
             name="MainNavigator"
-            component={Main}
+            component={Login}
             options={{headerShown: false}}
           />
           <screen.Screen
             name="SplashScreen"
             component={Splash}
+            options={{headerShown: false}}
+          />
+          <screen.Screen
+            name="User"
+            component={User}
             options={{headerShown: false}}
           />
         </screen.Navigator>

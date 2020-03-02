@@ -18,7 +18,7 @@ export default class Splash extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor="#ffffffff" />
         <Image
-          source={require('../assets/images/medicine.png')}
+          source={require('../../assets/images/medicine.png')}
           style={styles.image}
         />
         <View style={styles.innerContainer}>

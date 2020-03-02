@@ -12,7 +12,7 @@ const InputLabel = props => {
 const styles = StyleSheet.create({
   container: {},
   input: {
-    borderBottomColor: '#000000',
+    borderBottomColor: '#000',
     borderBottomWidth: 1,
     marginBottom: 20,
     width: 200,
