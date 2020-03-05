@@ -1,18 +1,11 @@
 import React, {Component} from 'react';
-import {Text, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import DataForm from '../modules/DataForm';
+import Results from './results';
 
 const screen = createBottomTabNavigator();
-
-const world = () => {
-  return (
-    <>
-      <Text>World</Text>
-    </>
-  );
-};
 
 export default class Main extends Component {
   componentDidMount = () => {
@@ -32,7 +25,7 @@ export default class Main extends Component {
             component={DataForm}
             options={{headerShown: false}}
           />
-          <screen.Screen name="Check results" component={world} />
+          <screen.Screen name="Check results" component={Results} />
         </screen.Navigator>
       </>
     );

@@ -1,10 +1,22 @@
 import React from 'react';
-import {View, TextInput, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import FloatingTextLabelInput from '../modules/floatingLabel';
 
 const InputLabel = props => {
   return (
     <View style={styles.container}>
-      <TextInput placeholder={props.label} style={styles.input} />
+      <FloatingTextLabelInput
+        value={props.value}
+        textInputStyle={styles.input}
+        label={props.label}
+        inputStyle={styles.input}
+        onColor="#011"
+        offColor="#abb"
+        onChange={val => {
+          if (props.onChange && props.attr)
+            props.onChange(props.attr, val.nativeEvent.text);
+        }}
+      />
     </View>
   );
 };
@@ -12,10 +24,10 @@ const InputLabel = props => {
 const styles = StyleSheet.create({
   container: {},
   input: {
-    borderBottomColor: '#000000',
+    borderBottomColor: '#000',
     borderBottomWidth: 1,
     marginBottom: 20,
-    width: 200,
+    width: 300, //200
     height: 38,
     paddingVertical: 10,
     alignItems: 'center',

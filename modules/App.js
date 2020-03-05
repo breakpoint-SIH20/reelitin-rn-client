@@ -5,8 +5,8 @@ import {
   CardStyleInterpolators,
 } from '@react-navigation/stack';
 
-import Splash from './Splashed';
-import Main from './main';
+import Splash from '../modules/Splashed';
+import Main from '../modules/main';
 
 // const stackNavigator = createStackNavigator(
 //   {
